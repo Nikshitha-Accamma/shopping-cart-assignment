@@ -1,0 +1,23 @@
+.footer-container {
+    width: 100%;
+    background: rgb(161 161 161 / 19%);
+    .ant-layout-footer {
+        padding: 14px 50px;
+        text-align: initial;
+    }
+    @media (max-width: 480px) {
+        .ant-layout-footer {
+            text-align: center;
+        }
+    }
+    @media (min-width: 481px) and (max-width: 767px) {
+        .ant-layout-footer {
+            text-align: center;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 1024px){
+        .ant-layout-footer {
+            text-align: center;
+        }
+    }
+}

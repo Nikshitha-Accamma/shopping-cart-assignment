@@ -1,0 +1,34 @@
+.home-container {
+    background: none;
+    .img-carousel {
+        max-width: 100%;
+        height: auto;
+    }
+    .avtar-img {
+        width: 300px;
+        max-width: 100%;
+        height: auto;
+    }
+    .display-each-card {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .card-title {
+        font-size: 18px;
+        font-weight: bolder;
+        padding: 1rem;
+    }
+    .card-desc {
+        padding: 0rem 1rem 1rem 1rem;
+        font-weight: 600;
+    }
+    .card-btn {
+        color: white;
+        background: rgb(234 46 150);
+    }
+    .ant-card {
+        margin-bottom: 1rem;
+        box-shadow: 2px 2px 8px 0px rgb(128 128 128 / 15%);
+    }
+}
