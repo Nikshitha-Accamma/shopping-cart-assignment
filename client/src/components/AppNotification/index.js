@@ -1,4 +1,3 @@
-import React from 'react';
 import { notification } from 'antd';
 
 const AppNotification = (type, title, message, duration = 3) => {

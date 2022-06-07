@@ -1,5 +1,6 @@
 import { Button, Card, Layout } from 'antd';
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import AppNotification from '../../components/AppNotification';
 import Carousel, { CarouselItem } from '../../components/CustomCorousel';
 import './index.scss';
@@ -8,6 +9,7 @@ const Home = () => {
     
     const [bannerList, setBannerList] = useState([]);
     const [categories, setCategories] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(()=>{
         fetch("http://localhost:3000/banners")
@@ -45,7 +47,7 @@ const Home = () => {
                      })
                  }
              </Carousel>
-             <div>
+             <section>
              {
                  categories  && categories.map((item, index) => {
                     return (
@@ -65,7 +67,7 @@ const Home = () => {
                             </div>
                             <div>
                                 <div className='card-desc'>{item.description}</div>
-                                <div><Button className='card-btn'>{`Explore ${item.name}`}</Button></div>
+                                <div><Button className='card-btn' onClick={()=>{navigate('/products', {state: item?.id})}}>{`Explore ${item.name}`}</Button></div>
                             </div>
                             </div>
                             {
@@ -79,7 +81,7 @@ const Home = () => {
                     )
                  })
              }
-             </div>
+             </section>
         </Layout>
     )
 }

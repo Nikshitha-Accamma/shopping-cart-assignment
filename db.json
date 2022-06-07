@@ -288,10 +288,7 @@
       "id": "5b6c386b6cb7d770b7010cd0"
     }
   ],
-  "addTOCart": {
-    "response": "Success",
-    "responseMessage": "Product added to cart successfully"
-  },
+  "addTOCart": {},
   "categories": [
     {
       "name": "Beverages",

@@ -9,10 +9,12 @@ import {
   Route,
 } from "react-router-dom";
 import { Layout } from 'antd';
+import Store from './store';
 
 function App() {
   return (
     <div className="App">
+      <Store>
       <BrowserRouter>
      <Navbar />
      <Layout className="main-container">
@@ -23,6 +25,7 @@ function App() {
      </Layout>
      <CustomFooter />
      </BrowserRouter>
+     </Store>
     </div>
   );
 }

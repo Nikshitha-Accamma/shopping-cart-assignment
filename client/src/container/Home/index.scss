@@ -1,3 +1,5 @@
+@import '../../assets/styles/functions';
+
 .home-container {
     background: none;
     .img-carousel {
@@ -5,7 +7,7 @@
         height: auto;
     }
     .avtar-img {
-        width: 300px;
+        width: toRem(300px);
         max-width: 100%;
         height: auto;
     }
@@ -15,7 +17,7 @@
         align-items: center;
     }
     .card-title {
-        font-size: 18px;
+        font-size: toRem(18px);
         font-weight: bolder;
         padding: 1rem;
     }
@@ -25,7 +27,8 @@
     }
     .card-btn {
         color: white;
-        background: rgb(234 46 150);
+        background: rgb(223 2 123);
+        font-weight: bold;
     }
     .ant-card {
         margin-bottom: 1rem;

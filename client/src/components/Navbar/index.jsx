@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Layout, Row, Col } from 'antd';
 import { CartIcon, Logo } from "../../assets/images";
 import "./index.scss";
 import { Link, useLocation } from "react-router-dom";
+import { Context } from "../../store";
 
 const Navbar = () => {
 
     const location = useLocation();
+    const [state] = useContext(Context);
 
  return ( <Layout className="navbar-container">
     <div className="logo">
-        <img alt="logo" src={Logo} height={60} />
+        <img alt="app-logo" src={Logo} height={60} />
     </div>
     <div className="nav-menu">
         <Link className={`nav-menu-item ${location.pathname === '/'? 'active': ""}`} to={'/'}>
@@ -30,7 +32,7 @@ const Navbar = () => {
             </Col>
             <Row className="cart-icon">
                 <img alt="cart-icon" src={CartIcon} height={30} />
-                <span>0 items</span> 
+                <span>{`${state?.cartDetails?.length} items`}</span> 
             </Row>
         </Row>
     </div>

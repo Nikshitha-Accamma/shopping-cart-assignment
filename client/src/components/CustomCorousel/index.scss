@@ -1,3 +1,5 @@
+@import '../../assets/styles/functions';
+
 .carousel {
     box-shadow: 0px 8px 8px 0px rgb(128 128 128 / 14%);
     margin: 1rem; 
@@ -18,9 +20,9 @@
     justify-content: center;
   }
   .indicators > .button {
-    margin: 4px;
-    height: 10px;
-    width: 10px;
+    margin: toRem(4px);
+    height: toRem(10px);
+    width: toRem(10px);
     background-color: rgb(120 117 117);
     border-radius: 50%;
     display: inline-block;

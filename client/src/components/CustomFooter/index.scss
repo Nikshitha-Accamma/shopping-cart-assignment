@@ -1,8 +1,10 @@
+@import '../../assets/styles/functions';
+
 .footer-container {
     width: 100%;
     background: rgb(161 161 161 / 19%);
     .ant-layout-footer {
-        padding: 14px 50px;
+        padding: toRem(14px) toRem(50px);
         text-align: initial;
     }
     @media (max-width: 480px) {
