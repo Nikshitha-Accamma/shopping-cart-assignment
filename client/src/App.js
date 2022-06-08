@@ -10,6 +10,8 @@ import {
 } from "react-router-dom";
 import { Layout } from 'antd';
 import Store from './store';
+import Login from './container/Login';
+import Register from './container/Register';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
      <Navbar />
      <Layout className="main-container">
      <Routes>
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/register" element={<Register />} />
           <Route exact path="/" element={<Home />} />
           <Route exact path="/products" element={<Products />} />
       </Routes>

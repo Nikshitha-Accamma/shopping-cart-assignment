@@ -1,4 +1,4 @@
-import { Card, Col, Dropdown, Empty, Layout, Menu, Row, Space } from 'antd';
+import { Button, Card, Col, Dropdown, Empty, Layout, Menu, Row, Space } from 'antd';
 import React, { useContext, useEffect, useState } from 'react';
 import { DownOutlined } from '@ant-design/icons';
 import AppNotification from '../../components/AppNotification';
@@ -135,10 +135,12 @@ const Products = () => {
                                                 `MRP Rs.${item.price}`
                                             }
                                             </div>
-                                            <div className="card-btn" onClick={()=>addToCart(item)}>
+                                            <div>
+                                                <Button  className="card-btn" onClick={()=>addToCart(item)}>
                                                 <span>
                                                     Buy Now <span className="item-price-sm-md">{`@ Rs.${item.price}`}</span>
                                                 </span>
+                                                </Button>
                                             </div>
                                         </div>
                                     </div>

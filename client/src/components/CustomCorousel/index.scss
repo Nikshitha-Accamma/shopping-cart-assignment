@@ -5,6 +5,7 @@
     margin: 1rem; 
     padding: 0.5rem;
     overflow: hidden;
+    position: relative;
   .inner {
     white-space: nowrap;
     transition: transform 0.3s;
@@ -35,15 +36,15 @@
   }
   .prev-btn {
     position: absolute;
-    bottom: 50%;
-    left: 5%;
+    top: 50%;
+    left: 0%;
     background: rgb(0 0 0 / 45%);
     color: #fff;
   }
   .next-btn {
     position: absolute;
-    bottom: 50%;
-    right: 5%;
+    top: 50%;
+    right: 0%;
     background: rgb(0 0 0 / 45%);
     color: #fff;
   }

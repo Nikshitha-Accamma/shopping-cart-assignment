@@ -1,0 +1,55 @@
+.login-container {
+    margin-top: 2rem;
+    text-align: left;
+    justify-content: center;
+    .ant-form-item:focus-within label {
+        color: rgb(0 78 255);
+      }
+      .ant-input {
+        border: none;
+        border-bottom: 1px solid #000;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0;
+      }
+      .ant-input:focus, .ant-input-focused {
+        border-bottom: 1px solid rgb(0 78 255);
+      }
+      .ant-input-affix-wrapper {
+        border: none;
+        border-bottom: 1px solid #000;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0;
+        .ant-input {
+            border: none;
+            border-bottom: none;
+            border-radius: 0;
+            box-shadow: none;
+            &:focus, .ant-input-focused {
+                border-bottom: none;
+              }
+        }
+
+      }
+      .ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input:focus, .ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input-focused {
+        border-color: #ff7875;
+        box-shadow: none;
+      }
+      .ant-input-suffix {
+        display: none;
+      }
+      .ant-input-affix-wrapper-status-error:not(.ant-input-affix-wrapper-disabled):not(.ant-input-affix-wrapper-borderless).ant-input-affix-wrapper:focus, .ant-input-affix-wrapper-status-error:not(.ant-input-affix-wrapper-disabled):not(.ant-input-affix-wrapper-borderless).ant-input-affix-wrapper-focused {
+          box-shadow: none;
+      }
+      .ant-form-item-label {
+          padding: 0;
+      }
+      .login-btn {
+          width: 100%;
+          background: rgb(223 2 123);
+          font-weight: bold;
+          color: white;
+          border: none;
+      }
+}
