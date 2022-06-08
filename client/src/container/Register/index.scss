@@ -32,8 +32,12 @@
         }
 
       }
+      .ant-form-item-explain-error {
+        color: rgb(255 0 0 / 78%);;
+        font-weight: bold;
+    }
       .ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input:focus, .ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input-focused {
-        border-color: #ff7875;
+        border-color: rgb(255 0 0 / 78%);;
         box-shadow: none;
       }
       .ant-input-suffix {
