@@ -186,6 +186,7 @@ const Products = () => {
                           <Button
                             className="card-btn"
                             onClick={() => addToCart(item)}
+                            data-testid="add-to-cart"
                           >
                             <span aria-label={`Buy ${item?.name}`}>
                               Buy Now{" "}

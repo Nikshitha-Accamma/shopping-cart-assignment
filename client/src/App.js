@@ -12,11 +12,12 @@ import { Layout } from 'antd';
 import Store from './store';
 import Login from './container/Login';
 import Register from './container/Register';
+import { initialStoreValue } from './contants';
 
 function App() {
   return (
     <div className="App">
-      <Store>
+      <Store initialState={initialStoreValue}>
       <BrowserRouter>
      <Navbar />
      <Layout className="main-container">

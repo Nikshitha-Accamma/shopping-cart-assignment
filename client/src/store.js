@@ -1,11 +1,11 @@
 import React, { createContext, useReducer } from 'react';
 import Reducer from './reducer';
 
-const initialState = {
+const initialStates = {
     cartDetails: []
 }
 
-const Store=({children})=>{
+const Store=({children, initialState})=>{
     const [state, dispatch] = useReducer(Reducer, initialState);
 
     return (
@@ -15,6 +15,6 @@ const Store=({children})=>{
     )
 }
 
-export const Context = createContext(initialState);
+export const Context = createContext(initialStates);
 
 export default Store;

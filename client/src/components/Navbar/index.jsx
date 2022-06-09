@@ -43,6 +43,7 @@ const Navbar = () => {
             onClick={() => {
               navigate("/login");
             }}
+            data-testid="login"
           >
             SignIn
           </Button>
@@ -52,6 +53,7 @@ const Navbar = () => {
             onClick={() => {
               navigate("/register");
             }}
+            data-testid="register"
           >
             Register
           </Button>
@@ -59,6 +61,7 @@ const Navbar = () => {
             type="text"
             className="cart-icon"
             onClick={() => setVisible(true)}
+            data-testid="cart-icon"
           >
             <img alt="Cart icon" src={CartIcon} height={30} />
             <span>{`${state?.cartDetails?.length} items`}</span>

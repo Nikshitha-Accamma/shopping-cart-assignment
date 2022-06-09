@@ -49,6 +49,7 @@ const Carousel = ({ children }) => {
             updateIndex(activeIndex - 1);
           }}
           className="prev-btn"
+          data-testid="prev-btn"
         >
           Prev
         </Button>
@@ -59,6 +60,7 @@ const Carousel = ({ children }) => {
               onClick={() => {
                 updateIndex(index);
               }}
+              data-testid={`btn-${index}`}
             />
           );
         })}
@@ -67,6 +69,7 @@ const Carousel = ({ children }) => {
             updateIndex(activeIndex + 1);
           }}
           className="next-btn"
+          data-testid="next-btn"
         >
           Next
         </Button>

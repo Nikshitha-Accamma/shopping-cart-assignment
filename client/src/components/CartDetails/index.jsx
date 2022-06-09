@@ -73,117 +73,116 @@ const CartDetails = ({visible, setVisible}) => {
   };
 
   return (
-      <Drawer
-        title={`My Cart (${state?.cartDetails?.length} items)`}
-        placement="right"
-        onClose={onClose}
-        visible={visible}
-        footer={
-          cartList?.length ? (
-            <div className="pay-footer">
-              Promo code can be applied on the payment page
-              <div>
-                <Button
-                  className="pay-btn"
-                  onClick={() => setVisible(false)}
-                  aria-label={`Rs.${cartPrice} Proceed to checkout`}
-                >
-                  <span>Proceed to checkout</span>
-                  <span>{`Rs.${cartPrice} >`}</span>
-                </Button>
-              </div>
-            </div>
-          ) : (
+    <Drawer
+      title={`My Cart (${state?.cartDetails?.length} items)`}
+      placement="right"
+      onClose={onClose}
+      visible={visible}
+      footer={
+        cartList?.length ? (
+          <div className="pay-footer">
+            Promo code can be applied on the payment page
             <div>
               <Button
-                className="start-shop-btn"
-                onClick={() => {
-                  setVisible(false);
-                  navigate("/products");
-                }}
+                className="pay-btn"
+                data-testid="pay-btn"
+                onClick={() => setVisible(false)}
+                aria-label={`Rs.${cartPrice} Proceed to checkout`}
               >
-                Start Shopping
+                <span>Proceed to checkout</span>
+                <span>{`Rs.${cartPrice} >`}</span>
               </Button>
-            </div>
-          )
-        }
-        className={`cart-drawer ${cartList?.length ? "add-bg" : ""}`}
-        aria-label="My Cart Drawer"
-      >
-        {cartList?.length ? (
-          <div>
-            {cartList?.map((item) => {
-              return (
-                <div
-                  key={item?.id}
-                  className="cart-disp-card"
-                  tabIndex="0"
-                  aria-label={`${item?.name} ${item?.qty} quantities`}
-                >
-                  <div>
-                    <img
-                      className="cart-disp-card-img"
-                      src={item?.imageURL}
-                      alt={item?.name}
-                    />
-                  </div>
-                  <div className="cart-disp-card-body">
-                    <div className="cart-disp-card-body-title">
-                      <Tooltip title={item?.name}>{item?.name}</Tooltip>
-                    </div>
-                    <div className="cart-disp-card-body-sub">
-                      <div>
-                        <Button
-                          type="text"
-                          className="cart-disp-card-body-minus"
-                          onClick={() => decreaseQty(item)}
-                          aria-label="decrease quantity"
-                        >
-                          -
-                        </Button>
-                        {item?.qty}
-                        <Button
-                          type="text"
-                          className="cart-disp-card-body-plus"
-                          onClick={() => increaseQty(item)}
-                          aria-label="increase quantity"
-                        >
-                          +
-                        </Button>
-                        <span>
-                          <CloseOutlined className="mul-icon" />
-                          {`Rs.${item?.price}`}
-                        </span>
-                      </div>
-                      <div className="text-align-right">
-                        Rs.{item?.price * item?.qty}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-            <div className="gaurentee-card">
-              <img
-                alt="Lowest Price Guaranteed"
-                src="/images/lowest-price.png"
-              />
-              You won't find it cheaper anywhere
             </div>
           </div>
         ) : (
-          <div
-            className="empty-content"
-            tabIndex="0"
-            aria-label="No items in your cart"
-          >
-            <p className="empty-content-title">No items in your cart</p>
-            <p className="empty-content-body">
-              Your favourite items are just a click away{" "}
-            </p>
+          <div>
+            <Button
+              className="start-shop-btn"
+              data-testid="start-shop-btn"
+              onClick={() => {
+                setVisible(false);
+                navigate("/products");
+              }}
+            >
+              Start Shopping
+            </Button>
           </div>
-        )}
-      </Drawer>
+        )
+      }
+      className={`cart-drawer ${cartList?.length ? "add-bg" : ""}`}
+      aria-label="My Cart Drawer"
+    >
+      {cartList?.length ? (
+        <div>
+          {cartList?.map((item) => {
+            return (
+              <div
+                key={item?.id}
+                className="cart-disp-card"
+                tabIndex="0"
+                aria-label={`${item?.name} ${item?.qty} quantities`}
+              >
+                <div>
+                  <img
+                    className="cart-disp-card-img"
+                    src={item?.imageURL}
+                    alt={item?.name}
+                  />
+                </div>
+                <div className="cart-disp-card-body">
+                  <div className="cart-disp-card-body-title">
+                    <Tooltip title={item?.name}>{item?.name}</Tooltip>
+                  </div>
+                  <div className="cart-disp-card-body-sub">
+                    <div>
+                      <Button
+                        type="text"
+                        className="cart-disp-card-body-minus"
+                        onClick={() => decreaseQty(item)}
+                        aria-label="decrease quantity"
+                      >
+                        -
+                      </Button>
+                      <span data-testid="qty">{item?.qty}</span>
+                      <Button
+                        type="text"
+                        className="cart-disp-card-body-plus"
+                        onClick={() => increaseQty(item)}
+                        aria-label="increase quantity"
+                      >
+                        +
+                      </Button>
+                      <span>
+                        <CloseOutlined className="mul-icon" />
+                        {`Rs.${item?.price}`}
+                      </span>
+                    </div>
+                    <div className="text-align-right">
+                      Rs.{item?.price * item?.qty}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+          <div className="gaurentee-card">
+            <img alt="Lowest Price Guaranteed" src="/images/lowest-price.png" />
+            You won't find it cheaper anywhere
+          </div>
+        </div>
+      ) : (
+        <div
+          className="empty-content"
+          tabIndex="0"
+          aria-label="No items in your cart"
+        >
+          <p className="empty-content-title">No items in your cart</p>
+          <p className="empty-content-body">
+            Your favourite items are just a click away{" "}
+          </p>
+        </div>
+      )}
+    </Drawer>
   );
 };
 export default CartDetails;

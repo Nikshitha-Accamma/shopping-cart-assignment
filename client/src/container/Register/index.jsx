@@ -43,7 +43,7 @@ const Register = () => {
                 },
               ]}
             >
-              <Input aria-label="Enter first name" />
+              <Input aria-label="Enter first name" data-testid="first-name" />
             </Form.Item>
             <Form.Item
               name="lastname"
@@ -56,7 +56,7 @@ const Register = () => {
                 },
               ]}
             >
-              <Input aria-label="Enter last name" />
+              <Input aria-label="Enter last name" data-testid="last-name" />
             </Form.Item>
             <Form.Item
               name="email"
@@ -72,7 +72,7 @@ const Register = () => {
                 },
               ]}
             >
-              <Input aria-label="Enter Email" />
+              <Input aria-label="Enter Email" data-testid="email" />
             </Form.Item>
 
             <Form.Item
@@ -100,7 +100,7 @@ const Register = () => {
                 }),
               ]}
             >
-              <Input.Password aria-label="Enter Password" />
+              <Input.Password aria-label="Enter Password" data-testid="password" />
             </Form.Item>
             <Form.Item
               name="confirm"
@@ -124,10 +124,10 @@ const Register = () => {
                 }),
               ]}
             >
-              <Input.Password aria-label="Enter confirm password" />
+              <Input.Password aria-label="Enter confirm password" data-testid="confirm-password" />
             </Form.Item>
             <Form.Item>
-              <Button htmlType="submit" className="signup-btn">
+              <Button htmlType="submit" className="signup-btn" data-testid="register-btn">
                 Signup
               </Button>
             </Form.Item>

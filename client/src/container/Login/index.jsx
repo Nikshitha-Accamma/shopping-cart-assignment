@@ -46,7 +46,7 @@ const Login = () => {
                 },
               ]}
             >
-              <Input aria-label="Enter Email" />
+              <Input aria-label="Enter Email" data-testid="email" />
             </Form.Item>
 
             <Form.Item
@@ -74,10 +74,14 @@ const Login = () => {
                 }),
               ]}
             >
-              <Input.Password aria-label="Enter Password" />
+              <Input.Password aria-label="Enter Password" data-testid="password" />
             </Form.Item>
             <Form.Item>
-              <Button htmlType="submit" className="login-btn">
+              <Button
+                htmlType="submit"
+                className="login-btn"
+                data-testid="login-btn"
+              >
                 Login
               </Button>
             </Form.Item>
