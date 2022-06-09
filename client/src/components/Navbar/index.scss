@@ -1,7 +1,10 @@
 @import '../../assets/styles/functions';
+@import '../../assets/styles/colors';
+@import '../../assets/styles/fonts';
+@import '../../assets/styles/mixins';
 
 .navbar-container {
-    display: grid;
+    @include display-style(grid);
     background: none;
     grid-template-columns: 25% 60% 10%;
     padding: 0.5rem;
@@ -9,41 +12,49 @@
     top: 0;
     z-index: 1000;
     width: 100%;
-    background: white;
-    box-shadow: 0px 11px 8px 0px rgb(128 128 128 / 14%);
+    background: $white;
+    box-shadow: 0px 11px 8px 0px $boxShadow;
     height: toRem(84px);
     .nav-menu {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        @include display-style(flex, center, flex-start);
         &-item {    
             padding-right: 3rem;
-            font-size: toRem(16px);
+            font-size: $font-16;
             cursor: pointer;
-            color: #000;
+            color: $black;
         }
         &-item.active {
-         font-weight: bold;
+         font-weight: $font-weight-bold;
+        }
+        &-item:focus {
+           color:$primary;
         }
     }
     .cart-icon {
-        background: rgb(128 128 128 / 19%);
-        padding: 0.5rem;   
+        background: $cartIconBg;
+        padding: 0.4rem;
         cursor: pointer;
+        height: auto;
+        &:focus {
+            border: 1px solid $primary;
+        }
     }
     .auth-items {
         padding: 0 0.5rem 0.5rem 0rem;
+        &:focus {
+            border: 1px solid $primary;
+        }
     }
     @media (max-width: 480px) {
         grid-template-columns: 79% 25% 10%;
         .nav-menu {
-            display: none;
+            @include display-style(none);
         }
         .auth-items {
-            display: none;
+            @include display-style(none);
         }
         .logo {
-            display: flex;
+            @include display-style(flex);
         }
         .cart-icon {
             margin: 0.5rem;
@@ -61,199 +72,5 @@
         .cart-icon {
             margin: 0rem;
         }
-    }
-}
-
-.cart-drawer {
-    .ant-drawer-close {
-        color: #fff;
-        position: absolute;
-        right: 0;
-    }
-    .ant-drawer-header {
-        background-color: #000;
-        color: #fff;
-    }
-    .ant-drawer-title {
-        color: #fff;
-    }
-    .empty-content {
-        margin: 0;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        text-align: center;
-        &-title {
-            font-size: toRem(18px);
-            font-weight: bold;
-        }
-        &-body {
-            font-size: toRem(16px);
-        }
-    }
-    .ant-drawer-content-wrapper {
-        width: 500px !important;
-    }
-    .start-shop-btn {
-        color: white;
-        background: rgb(223, 2, 123);
-        font-weight: bold;
-        width: 100%;
-        border: none;
-    }
-    .pay-footer {
-        text-align: center;
-        font-weight: 600;
-        .pay-btn {
-            color: white;
-            background: rgb(223, 2, 123);
-            font-weight: bold;
-            width: 100%;
-            border: none;
-            span:nth-child(1) {
-                float: left;
-            }
-            span:nth-child(2) {
-                float: right;
-            }
-        }
-    }
-    .gaurentee-card {
-        margin: 0rem 1rem;
-        background: white;
-        padding: 0.5rem;
-        border-radius: 4px;
-        font-size: toRem(15px);
-        img {
-            padding-right: 1rem;
-        }
-    }
-    .cart-disp-card {
-        display: grid;
-        grid-template-columns: 15% 85%;
-        background: white;
-        margin-bottom: 1rem;
-        &-img {
-            max-width: 100%;
-            height: auto;
-        }
-        &-body {
-            padding: 1rem;
-            &-minus, &-plus {
-                height: toRem(17px);
-                width: toRem(17px);
-                background-color: rgb(223, 2, 123);
-                color: #fff;
-                border-radius: 50%;
-                display: inline-block;
-                font-weight: bolder;
-                text-align: center;
-                font-size: toRem(12px);
-                margin: 0 1rem;
-                cursor: pointer;
-
-            }
-            &-title {
-                font-size: toRem(16px);
-                font-weight: bold;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-            }
-            &-sub {
-                display: grid;
-                grid-template-columns: 70% 30%;
-                font-weight: 600;
-                .mul-icon {
-                    padding: 0 1rem;
-                }
-            }
-        }
-    }
-    .ant-drawer-body {
-        padding: 1rem 0rem;
-    }
-    @media (max-width: 480px) {
-        .ant-drawer-content-wrapper {
-            width: 100% !important;
-            height: 85%;
-            position: absolute;
-            bottom: 0;
-        }
-        .ant-drawer-close {
-            display: none;
-        }
-        .ant-drawer-header {
-            background-color: #fff;
-            color: #000;
-        }
-        .ant-drawer-title {
-            color: #000;
-        }
-        .cart-disp-card {
-            &-body {
-                &-minus, &-plus {
-                    border-radius: 20%;
-                }
-            }
-        }
-    }
-    @media (min-width: 481px) and (max-width: 767px) {
-        .ant-drawer-content-wrapper {
-            width: 100% !important;
-            height: 85%;
-            position: absolute;
-            bottom: 0;
-        }
-        .ant-drawer-close {
-            display: none;
-        }
-        .ant-drawer-header {
-            background-color: #fff;
-            color: #000;
-        }
-        .ant-drawer-title {
-            color: #000;
-        }
-        .cart-disp-card {
-            &-body {
-                &-minus, &-plus {
-                    border-radius: 20%;
-                }
-            }
-        }
-    }
-    @media (min-width: 768px) and (max-width: 1024px){
-        .ant-drawer-content-wrapper {
-            width: 100% !important;
-            height: 85%;
-            position: absolute;
-            bottom: 0;
-        }
-        .ant-drawer-close {
-            display: none;
-        }
-        .ant-drawer-header {
-            background-color: #fff;
-            color: #000;
-        }
-        .ant-drawer-title {
-            color: #000;
-        }
-        .cart-disp-card {
-            &-body {
-                &-minus, &-plus {
-                    border-radius: 20%;
-                }
-            }
-        }
-    }
-}
-
-.add-bg {
-    .ant-drawer-body {
-        background-color: rgb(128 128 128 / 25%);
     }
 }

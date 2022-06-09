@@ -1,7 +1,9 @@
 @import '../../assets/styles/functions';
+@import '../../assets/styles/colors';
+@import '../../assets/styles/mixins';
 
 .carousel {
-    box-shadow: 0px 8px 8px 0px rgb(128 128 128 / 14%);
+    box-shadow: 0px 8px 8px 0px $boxShadow;
     margin: 1rem; 
     padding: 0.5rem;
     overflow: hidden;
@@ -11,60 +13,50 @@
     transition: transform 0.3s;
   }
   .carousel-item {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
+    @include display-style(inline-flex, center, center);
+    color: $white;
   }
   .indicators {
-    display: flex;
-    justify-content: center;
+    @include display-style(flex, $justify-content: center);
   }
   .indicators > .button {
     margin: toRem(4px);
     height: toRem(10px);
     width: toRem(10px);
-    background-color: rgb(120 117 117);
+    background-color: $corouselIndicator;
     border-radius: 50%;
-    display: inline-block;
-    border: none;
+    @include display-style(inline-block);
     cursor: pointer;
   }
   .indicators > .button.active {
-    background-color: black;
-    color: #fff;
+    background-color: $black;
+    color: $white;
   }
   .prev-btn {
-    position: absolute;
-    top: 50%;
+    @include prev-next-style;
     left: 0%;
-    background: rgb(0 0 0 / 45%);
-    color: #fff;
   }
   .next-btn {
-    position: absolute;
-    top: 50%;
+    @include prev-next-style;
     right: 0%;
-    background: rgb(0 0 0 / 45%);
-    color: #fff;
   }
   @media (max-width: 480px) {
     .indicators {
         .next-btn {
-            display: none;
+            @include display-style(none);
         }
         .prev-btn {
-            display: none;
+            @include display-style(none);
         }
     }
 }
 @media (min-width: 481px) and (max-width: 767px) {
     .indicators {
         .next-btn {
-            display: none;
+            @include display-style(none);
         }
         .prev-btn {
-            display: none;
+            @include display-style(none);
         }
     }
 }

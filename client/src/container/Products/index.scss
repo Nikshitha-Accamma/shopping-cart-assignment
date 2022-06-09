@@ -1,11 +1,14 @@
 @import "../../assets/styles/functions";
+@import "../../assets/styles/colors";
+@import '../../assets/styles/fonts';
+@import '../../assets/styles/mixins';
 
 .products-container {
     .category-list {
-        display: block;
+        @include display-style(block);
     }
     .category-dropdown {
-        display: none;
+        @include display-style(none);
     }
     .product-img {
         max-width: 100%;
@@ -14,14 +17,14 @@
     .menu-item {
        cursor: pointer;
        padding: 1rem;
-       border-bottom: 1px solid rgb(128 128 128 / 47%)
+       border-bottom: 1px solid $menuItemBorder;
     }
     .menu-item.active {
-        background-color: rgb(235 47 150 / 53%);
-        color: #fff;
+        background-color: $menuItemActive;
+        color: $white;
     }
     .ant-layout-sider {
-        background: rgb(128 128 128 / 36%);
+        background: $siderBg;
     }
     .ant-layout-sider-children {
         padding: 0rem 1rem;
@@ -30,25 +33,22 @@
         padding: 1rem;
         text-align: start;
         margin: 0.5rem;
-        box-shadow: 5px 0px 3px -2px rgb(128 128 128 / 25%);
-        border-bottom: 1px dashed rgb(128 128 128 / 57%);
+        box-shadow: 5px 0px 3px -2px $opaqueBlack;
+        border-bottom: 1px dashed $siderBorder;
     }
     .item-price-sm-md {
-        display: none;
+        @include display-style(none);
     }
     .price-val {
-        display: block;
+        @include display-style(block);
         margin: auto;
-        font-weight: 600;
+        font-weight: $font-weight-600;
     }
     .card-btn {
-        background: rgb(223 2 123);
-        font-weight: bold;
-        color: white;
-        border: none;
+        @include button-style;
     }
     .pricing-card {
-        display: grid;
+        @include display-style(grid);
         grid-template-columns: 50% 50%;
     }
     .card-display-container {
@@ -66,9 +66,9 @@
                 -moz-line-clamp: 2;
                 -ms-line-clamp: 2;
                 line-clamp: 2;
-                font-weight: bold;
+                font-weight: $font-weight-bold;
                 overflow: hidden;
-                display: -webkit-box;
+                @include display-style(-webkit-box);
                 padding: 0.5rem;
                 margin: 0.5rem 0rem;
             }
@@ -87,7 +87,7 @@
                 background: rgb(128 128 128 / 11%);
                 padding: 0.5rem;
                 margin: 0.5rem 0rem;
-                display: -webkit-box;
+                @include display-style(-webkit-box);
             }
         }
     }
@@ -95,70 +95,70 @@
         margin: auto;
     }
     .category-dropdown {
-        background: rgb(223 2 123);
-        color: white;
+        background: $primary;
+        color: $white;
         padding: 6px;
     }
     @media (max-width: 480px) {
         .item-price-sm-md {
-            display: inline;
+            @include display-style(inline);
         }
         .price-val {
-            display: none;
+            @include display-style(none);
         }
         .card-desc-img {
-            display: grid;
+            @include display-style(grid);
             grid-template-columns: 50% 50%;
         }
         .pricing-card {
-            display: flex;
+            @include display-style(flex);
             float: right;
         }
         .category-list {
-            display: none;
+            @include display-style(none);
         }
         .category-dropdown {
-            display: block;
+            @include display-style(block);
         }
     }
     @media (min-width: 481px) and (max-width: 767px) {
         .item-price-sm-md {
-            display: inline;
+            @include display-style(inline);
         }
         .price-val {
-            display: none;
+            @include display-style(none);
         }
         .card-display-container {
-            justify-content: center;
+            @include display-style($justify-content: center);
         }
         .card-desc-img {
-            display: grid;
+            @include display-style(grid);
             grid-template-columns: 50% 50%;
         }
         .pricing-card {
-            display: flex;
+            @include display-style(flex);
             float: right;
         }
         .category-list {
-            display: none;
+            @include display-style(none);
         }
         .category-dropdown {
-            display: block;
+            @include display-style(block);
         }
     }
     @media (min-width: 768px) and (max-width: 1024px){
         .item-price-sm-md {
-            display: inline;
+            @include display-style(inline);
         }
         .price-val {
-            display: none;
+            @include display-style(none);
         }
         .card-desc-img {
-            display: grid;
+            @include display-style(grid);
             grid-template-columns: 50% 50%;
         }
         .pricing-card {
-            display: block;
+            @include display-style(block);
         }
     }
 }

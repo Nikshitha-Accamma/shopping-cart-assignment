@@ -1,6 +1,6 @@
 import { notification } from 'antd';
 
-const AppNotification = (type, title, message, duration = 2) => {
+const AppNotification = (type, title, message, duration = 1) => {
   notification[type]({
     message: title,
     description: message, 

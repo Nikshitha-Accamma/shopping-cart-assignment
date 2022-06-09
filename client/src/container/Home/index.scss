@@ -1,4 +1,7 @@
 @import '../../assets/styles/functions';
+@import '../../assets/styles/colors';
+@import '../../assets/styles/fonts';
+@import '../../assets/styles/mixins';
 
 .home-container {
     background: none;
@@ -12,27 +15,22 @@
         height: auto;
     }
     .display-each-card {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
+        @include display-style(flex, center, space-evenly);
     }
     .card-title {
-        font-size: toRem(18px);
+        font-size: $font-18;
         font-weight: bolder;
         padding: 1rem;
     }
     .card-desc {
         padding: 0rem 1rem 1rem 1rem;
-        font-weight: 600;
+        font-weight: $font-weight-600;
     }
     .card-btn {
-        color: white;
-        background: rgb(223 2 123);
-        font-weight: bold;
-        border: none;
+        @include button-style;
     }
     .ant-card {
         margin-bottom: 1rem;
-        box-shadow: 2px 2px 8px 0px rgb(128 128 128 / 15%);
+        box-shadow: 2px 2px 8px 0px $boxShadow;
     }
 }
