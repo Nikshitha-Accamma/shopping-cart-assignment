@@ -1,0 +1,164 @@
+@import "../../assets/styles/functions";
+@import "../../assets/styles/colors";
+@import '../../assets/styles/fonts';
+@import '../../assets/styles/mixins';
+
+.products-container {
+    .category-list {
+        @include display-style(block);
+    }
+    .category-dropdown {
+        @include display-style(none);
+    }
+    .product-img {
+        max-width: 100%;
+        height: auto;
+    }
+    .menu-item {
+       cursor: pointer;
+       padding: 1rem;
+       border-bottom: 1px solid $menuItemBorder;
+    }
+    .menu-item.active {
+        background-color: $menuItemActive;
+        color: $white;
+    }
+    .ant-layout-sider {
+        background: $siderBg;
+    }
+    .ant-layout-sider-children {
+        padding: 0rem 1rem;
+    }
+    .ant-card-body {
+        padding: 1rem;
+        text-align: start;
+        margin: 0.5rem;
+        box-shadow: 5px 0px 3px -2px $opaqueBlack;
+        border-bottom: 1px dashed $siderBorder;
+    }
+    .item-price-sm-md {
+        @include display-style(none);
+    }
+    .price-val {
+        @include display-style(block);
+        margin: auto;
+        font-weight: $font-weight-600;
+    }
+    .card-btn {
+        @include button-style;
+    }
+    .pricing-card {
+        @include display-style(grid);
+        grid-template-columns: 50% 50%;
+    }
+    .card-display-container {
+        justify-content: space-between;
+        .card-rows {
+            text-align: initial;
+            .card-title {
+                width: auto;
+                height: toRem(50px);
+                -webkit-box-orient: vertical;
+                -moz-box-orient: vertical;
+                -ms-box-orient: vertical;
+                box-orient: vertical;
+                -webkit-line-clamp: 2;
+                -moz-line-clamp: 2;
+                -ms-line-clamp: 2;
+                line-clamp: 2;
+                font-weight: $font-weight-bold;
+                overflow: hidden;
+                @include display-style(-webkit-box);
+                padding: 0.5rem;
+                margin: 0.5rem 0rem;
+            }
+            .card-body {
+                width: auto;
+                height: 100px;
+                -webkit-box-orient: vertical;
+                -moz-box-orient: vertical;
+                -ms-box-orient: vertical;
+                box-orient: vertical;
+                -webkit-line-clamp: 4;
+                -moz-line-clamp: 4;
+                -ms-line-clamp: 4;
+                line-clamp: 4;
+                overflow: hidden;
+                background: rgb(128 128 128 / 11%);
+                padding: 0.5rem;
+                margin: 0.5rem 0rem;
+                @include display-style(-webkit-box);
+            }
+        }
+    }
+    .ant-empty {
+        margin: auto;
+    }
+    .category-dropdown {
+        background: $primary;
+        color: $white;
+        padding: 6px;
+    }
+    @media (max-width: 480px) {
+        .item-price-sm-md {
+            @include display-style(inline);
+        }
+        .price-val {
+            @include display-style(none);
+        }
+        .card-desc-img {
+            @include display-style(grid);
+            grid-template-columns: 50% 50%;
+        }
+        .pricing-card {
+            @include display-style(flex);
+            float: right;
+        }
+        .category-list {
+            @include display-style(none);
+        }
+        .category-dropdown {
+            @include display-style(block);
+        }
+    }
+    @media (min-width: 481px) and (max-width: 767px) {
+        .item-price-sm-md {
+            @include display-style(inline);
+        }
+        .price-val {
+            @include display-style(none);
+        }
+        .card-display-container {
+            @include display-style($justify-content: center);
+        }
+        .card-desc-img {
+            @include display-style(grid);
+            grid-template-columns: 50% 50%;
+        }
+        .pricing-card {
+            @include display-style(flex);
+            float: right;
+        }
+        .category-list {
+            @include display-style(none);
+        }
+        .category-dropdown {
+            @include display-style(block);
+        }
+    }
+    @media (min-width: 768px) and (max-width: 1024px){
+        .item-price-sm-md {
+            @include display-style(inline);
+        }
+        .price-val {
+            @include display-style(none);
+        }
+        .card-desc-img {
+            @include display-style(grid);
+            grid-template-columns: 50% 50%;
+        }
+        .pricing-card {
+            @include display-style(block);
+        }
+    }
+}

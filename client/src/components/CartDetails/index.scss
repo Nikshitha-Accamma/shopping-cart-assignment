@@ -1,0 +1,198 @@
+@import '../../assets/styles/functions';
+@import '../../assets/styles/colors';
+@import '../../assets/styles/fonts';
+@import '../../assets/styles/mixins';
+
+.cart-drawer {
+    .ant-drawer-close {
+        color: $white;
+        position: absolute;
+        right: 0;
+        &:focus {
+            color: $primary;
+        }
+    }
+    .ant-drawer-header {
+        background-color: $black;
+        color: $white;
+    }
+    .ant-drawer-title {
+        color: $white;
+    }
+    .empty-content {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+        &-title {
+            font-size: $font-18;
+            font-weight: $font-weight-bold;
+        }
+        &-body {
+            font-size: $font-16;
+        }
+    }
+    .ant-drawer-content-wrapper {
+        width: 500px !important;
+    }
+    .start-shop-btn {
+        width: 100%;
+        @include button-style;
+    }
+    .pay-footer {
+        text-align: center;
+        font-weight: $font-weight-600;
+        .pay-btn {
+            width: 100%;
+            @include button-style;
+            span:nth-child(1) {
+                float: left;
+            }
+            span:nth-child(2) {
+                float: right;
+            }
+        }
+    }
+    .gaurentee-card {
+        margin: 0rem 1rem;
+        background: $white;
+        padding: 0.5rem;
+        border-radius: 4px;
+        font-size: $font-15;
+        img {
+            padding-right: 1rem;
+        }
+    }
+    .cart-disp-card {
+        @include display-style(grid);
+        grid-template-columns: 15% 85%;
+        background: $white;
+        margin-bottom: 1rem;
+        &-img {
+            max-width: 100%;
+            height: auto;
+        }
+        &-body {
+            padding: 1rem;
+            &-minus, &-plus {
+                height: toRem(17px);
+                width: toRem(17px);
+                background-color: $primary;
+                color: $white;
+                border-radius: 50%;
+                @include display-style(inline-block, $text-align: center);
+                font-weight: $font-weight-bolder;
+                font-size: $font-12;
+                margin: 0 1rem;
+                cursor: pointer;
+                padding: 0;
+                &:focus {
+                    border: 2px solid $highlightBlue;
+                }
+
+            }
+            &-title {
+                font-size: $font-16;
+                font-weight: $font-weight-bold;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            &-sub {
+                @include display-style(grid);
+                grid-template-columns: 70% 30%;
+                font-weight: $font-weight-600;
+                .mul-icon {
+                    padding: 0 1rem;
+                }
+            }
+        }
+    }
+    .ant-drawer-body {
+        padding: 1rem 0rem;
+    }
+    @media (max-width: 480px) {
+        .ant-drawer-content-wrapper {
+            width: 100% !important;
+            height: 85%;
+            position: absolute;
+            bottom: 0;
+        }
+        .ant-drawer-close {
+            @include display-style(none);
+        }
+        .ant-drawer-header {
+            background-color: $white;;
+            color: $black;
+        }
+        .ant-drawer-title {
+            color: $black;
+        }
+        .cart-disp-card {
+            &-body {
+                &-minus, &-plus {
+                    border-radius: 20%;
+                }
+            }
+        }
+    }
+    @media (min-width: 481px) and (max-width: 767px) {
+        .ant-drawer-content-wrapper {
+            width: 100% !important;
+            height: 85%;
+            position: absolute;
+            bottom: 0;
+        }
+        .ant-drawer-close {
+            @include display-style(none);
+        }
+        .ant-drawer-header {
+            background-color: $white;;
+            color: $black;
+        }
+        .ant-drawer-title {
+            color: $black;
+        }
+        .cart-disp-card {
+            &-body {
+                &-minus, &-plus {
+                    border-radius: 20%;
+                }
+            }
+        }
+    }
+    @media (min-width: 768px) and (max-width: 1024px){
+        .ant-drawer-content-wrapper {
+            width: 100% !important;
+            height: 85%;
+            position: absolute;
+            bottom: 0;
+        }
+        .ant-drawer-close {
+            @include display-style(none);
+        }
+        .ant-drawer-header {
+            background-color: $white;;
+            color: $black;
+        }
+        .ant-drawer-title {
+            color: $black;
+        }
+        .cart-disp-card {
+            &-body {
+                &-minus, &-plus {
+                    border-radius: 20%;
+                }
+            }
+        }
+    }
+}
+
+.add-bg {
+    .ant-drawer-body {
+        background-color: $opaqueBlack;
+    }
+}

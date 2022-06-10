@@ -1,0 +1,26 @@
+@import '../../assets/styles/functions';
+@import '../../assets/styles/colors';
+
+.footer-container {
+    width: 100%;
+    background: $footerBg;
+    .ant-layout-footer {
+        padding: toRem(14px) toRem(50px);
+        text-align: initial;
+    }
+    @media (max-width: 480px) {
+        .ant-layout-footer {
+            text-align: center;
+        }
+    }
+    @media (min-width: 481px) and (max-width: 767px) {
+        .ant-layout-footer {
+            text-align: center;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 1024px){
+        .ant-layout-footer {
+            text-align: center;
+        }
+    }
+}

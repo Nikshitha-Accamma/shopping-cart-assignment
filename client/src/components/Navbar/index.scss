@@ -1,0 +1,76 @@
+@import '../../assets/styles/functions';
+@import '../../assets/styles/colors';
+@import '../../assets/styles/fonts';
+@import '../../assets/styles/mixins';
+
+.navbar-container {
+    @include display-style(grid);
+    background: none;
+    grid-template-columns: 25% 60% 10%;
+    padding: 0.5rem;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: $white;
+    box-shadow: 0px 11px 8px 0px $boxShadow;
+    height: toRem(84px);
+    .nav-menu {
+        @include display-style(flex, center, flex-start);
+        &-item {    
+            padding-right: 3rem;
+            font-size: $font-16;
+            cursor: pointer;
+            color: $black;
+        }
+        &-item.active {
+         font-weight: $font-weight-bold;
+        }
+        &-item:focus {
+           color:$primary;
+        }
+    }
+    .cart-icon {
+        background: $cartIconBg;
+        padding: 0.4rem;
+        cursor: pointer;
+        height: auto;
+        &:focus {
+            border: 1px solid $primary;
+        }
+    }
+    .auth-items {
+        padding: 0 0.5rem 0.5rem 0rem;
+        &:focus {
+            border: 1px solid $primary;
+        }
+    }
+    @media (max-width: 480px) {
+        grid-template-columns: 79% 25% 10%;
+        .nav-menu {
+            @include display-style(none);
+        }
+        .auth-items {
+            @include display-style(none);
+        }
+        .logo {
+            @include display-style(flex);
+        }
+        .cart-icon {
+            margin: 0.5rem;
+        }
+
+    }
+    @media (min-width: 481px) and (max-width: 767px) {
+        grid-template-columns: 36% 45% 20%;
+        margin: 0rem;
+    }
+    @media (min-width: 768px) and (max-width: 1024px){
+        grid-template-columns: 25% 60% 15%;
+    }
+    @media (min-width: 1281px) {
+        .cart-icon {
+            margin: 0rem;
+        }
+    }
+}
