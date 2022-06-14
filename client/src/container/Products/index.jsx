@@ -50,7 +50,7 @@ const Products = () => {
       .then((res) => res.json())
       .then(
         (result) => {
-          const categoryList = result.map((item) => ({
+          const categoryList = result?.map((item) => ({
             key: item?.id,
             label: item?.name,
           }));
@@ -150,7 +150,7 @@ const Products = () => {
         </div>
         <Row className="card-display-container">
           {filteredProducts.length ? (
-            filteredProducts.map((item) => {
+            filteredProducts?.map((item) => {
               return (
                 <Col
                   sm={16}

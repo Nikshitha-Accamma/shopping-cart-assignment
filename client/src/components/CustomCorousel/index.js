@@ -39,7 +39,7 @@ const Carousel = ({ children }) => {
         className="inner"
         style={{ transform: `translateX(-${activeIndex * 100}%)` }}
       >
-        {React.Children.map(children, (child, index) => {
+        {React.Children?.map(children, (child, index) => {
           return React.cloneElement(child, { width: "100%" });
         })}
       </div>
@@ -53,7 +53,7 @@ const Carousel = ({ children }) => {
         >
           Prev
         </Button>
-        {React.Children.map(children, (child, index) => {
+        {React.Children?.map(children, (child, index) => {
           return (
             <div
               className={`button ${index === activeIndex ? "active" : ""}`}

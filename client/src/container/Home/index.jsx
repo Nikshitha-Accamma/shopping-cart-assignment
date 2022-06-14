@@ -40,8 +40,7 @@ const Home = () => {
   return (
     <Layout className="home-container">
       <Carousel showThumbs={false}>
-        {bannerList &&
-          bannerList.map((item) => {
+        {bannerList?.map((item) => {
             return (
               item.bannerImageUrl && (
                 <CarouselItem key={item.id}>
@@ -56,8 +55,7 @@ const Home = () => {
           })}
       </Carousel>
       <section>
-        {categories &&
-          categories.map((item, index) => {
+        {categories?.map((item, index) => {
             return (
               <Card key={item.id} bordered={false}>
                 <div className="display-each-card">
