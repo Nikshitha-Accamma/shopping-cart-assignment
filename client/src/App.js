@@ -4,21 +4,16 @@ import CustomFooter from './components/CustomFooter';
 import Home from './container/Home';
 import Products from './container/Products';
 import {
-  BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
 import { Layout } from 'antd';
-import Store from './store';
 import Login from './container/Login';
 import Register from './container/Register';
-import { initialStoreValue } from './contants';
 
 function App() {
   return (
     <div className="App">
-      <Store initialState={initialStoreValue}>
-      <BrowserRouter>
      <Navbar />
      <Layout className="main-container">
      <Routes>
@@ -29,8 +24,6 @@ function App() {
       </Routes>
      </Layout>
      <CustomFooter />
-     </BrowserRouter>
-     </Store>
     </div>
   );
 }

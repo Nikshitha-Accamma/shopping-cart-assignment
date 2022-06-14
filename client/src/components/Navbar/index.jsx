@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Layout, Row, Button } from "antd";
+import { Row, Button } from "antd";
 import { CartIcon, Logo } from "../../assets/images";
 import "./index.scss";
 import { Link, useLocation, useNavigate } from "react-router-dom";
