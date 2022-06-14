@@ -1,4 +1,4 @@
-import { Button, Card, Layout } from "antd";
+import { Button, Card, Empty, Layout } from "antd";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AppNotification from "../../components/AppNotification";
@@ -39,8 +39,11 @@ const Home = () => {
 
   return (
     <Layout className="home-container">
+      {
+            bannerList?.length ? 
       <Carousel showThumbs={false}>
-        {bannerList?.map((item) => {
+        {
+        bannerList?.map((item) => {
             return (
               item.bannerImageUrl && (
                 <CarouselItem key={item.id}>
@@ -52,8 +55,13 @@ const Home = () => {
                 </CarouselItem>
               )
             );
-          })}
+          })
+        }
       </Carousel>
+      : <Empty />}
+      {
+      categories?.length?
+        
       <section>
         {categories?.map((item, index) => {
             return (
@@ -95,7 +103,8 @@ const Home = () => {
               </Card>
             );
           })}
-      </section>
+      </section>: ''
+}
     </Layout>
   );
 };

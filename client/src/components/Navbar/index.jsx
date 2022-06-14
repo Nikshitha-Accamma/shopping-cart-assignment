@@ -13,7 +13,7 @@ const Navbar = () => {
   const [visible, setVisible] = useState(false);
 
   return (
-    <Layout className="navbar-container">
+    <nav className="navbar-container">
       <div className="logo">
         <img alt="App logo" src={Logo} height={60} />
       </div>
@@ -69,7 +69,7 @@ const Navbar = () => {
         </Row>
       </div>
       <CartDetails visible={visible} setVisible={setVisible} />
-    </Layout>
+    </nav>
   );
 };
 export default Navbar;

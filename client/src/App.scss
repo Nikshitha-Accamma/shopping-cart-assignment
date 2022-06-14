@@ -2,41 +2,42 @@
 
 .App {
   text-align: center;
-}
 
-body {
-  font-family: 'Dosis';
-  height: auto;
-}
+  body {
+    font-family: 'Dosis';
+    height: auto;
+  }
 
-/* width */
-::-webkit-scrollbar {
-  width: 0.3rem;
-}
+  /* width */
+  ::-webkit-scrollbar {
+    width: 0.3rem;
+  }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888; 
-}
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
 
-.ant-layout {
-  background: none;
-}
+  .ant-layout {
+    background: none;
+  }
 
-.main-container {
-  margin: 6rem 3rem 0rem 3rem;
-}
+  .main-container {
+    margin: 6rem 3rem 0rem 3rem;
+  }
 
-.text-align-right {
-  text-align: right;
+  .text-align-right {
+    text-align: right;
+  }
+
 }

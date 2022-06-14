@@ -118,6 +118,8 @@ const Products = () => {
 
   return (
     <Layout className="products-container">
+      {
+        categories?.length?
       <Sider className="category-list" width={200}>
         {categories?.map((item) => {
           return (
@@ -138,7 +140,8 @@ const Products = () => {
             </div>
           );
         })}
-      </Sider>
+      </Sider>: ''
+    }
       <Content>
         <div className="category-dropdown">
           <Dropdown overlay={menu} trigger={["click"]}>
