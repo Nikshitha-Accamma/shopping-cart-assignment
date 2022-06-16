@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Drawer, Button, Tooltip } from "antd";
+import { Drawer, Tooltip } from "antd";
 import "./index.scss";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../../store";
 import { CloseOutlined } from "@ant-design/icons";
+import CustomButton from "../CustomButton";
 
 const CartDetails = ({visible, setVisible}) => {
   const navigate = useNavigate();
@@ -83,29 +84,24 @@ const CartDetails = ({visible, setVisible}) => {
           <div className="pay-footer">
             Promo code can be applied on the payment page
             <div>
-              <Button
-                className="pay-btn"
-                data-testid="pay-btn"
-                onClick={() => setVisible(false)}
-                aria-label={`Rs.${cartPrice} Proceed to checkout`}
-              >
+              <CustomButton className="pay-btn" testId="pay-btn" onClickHandler={() => setVisible(false)} label="Proceed to checkout Button"> 
                 <span>Proceed to checkout</span>
                 <span>{`Rs.${cartPrice} >`}</span>
-              </Button>
+              </CustomButton>
             </div>
           </div>
         ) : (
           <div>
-            <Button
-              className="start-shop-btn"
-              data-testid="start-shop-btn"
-              onClick={() => {
+            <CustomButton 
+                className="start-shop-btn" 
+                testId="start-shop-btn" 
+                label="Start Shopping Button"
+                onClickHandler={() => {
                 setVisible(false);
                 navigate("/products");
-              }}
-            >
-              Start Shopping
-            </Button>
+              }}> 
+                Start Shopping
+              </CustomButton>
           </div>
         )
       }
@@ -135,23 +131,23 @@ const CartDetails = ({visible, setVisible}) => {
                   </div>
                   <div className="cart-disp-card-body-sub">
                     <div>
-                      <Button
-                        type="text"
-                        className="cart-disp-card-body-minus"
-                        onClick={() => decreaseQty(item)}
-                        aria-label="decrease quantity"
-                      >
-                        -
-                      </Button>
+                    <CustomButton 
+                      type="text"
+                      className="cart-disp-card-body-minus" 
+                      onClickHandler={() => decreaseQty(item)}
+                      label="decrease quantity"
+                    > 
+                      -
+                    </CustomButton>
                       <span data-testid="qty">{item?.qty}</span>
-                      <Button
-                        type="text"
-                        className="cart-disp-card-body-plus"
-                        onClick={() => increaseQty(item)}
-                        aria-label="increase quantity"
-                      >
-                        +
-                      </Button>
+                      <CustomButton 
+                      type="text"
+                      className="cart-disp-card-body-plus" 
+                      onClickHandler={() => increaseQty(item)}
+                      label="increase quantity"
+                    > 
+                      +
+                    </CustomButton>
                       <span>
                         <CloseOutlined className="mul-icon" />
                         {`Rs.${item?.price}`}

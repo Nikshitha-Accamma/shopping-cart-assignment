@@ -1,7 +1,8 @@
-import { Button, Card, Empty, Layout } from "antd";
+import { Card, Empty, Layout } from "antd";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AppNotification from "../../components/AppNotification";
+import CustomButton from "../../components/CustomButton";
 import Carousel, { CarouselItem } from "../../components/CustomCorousel";
 import "./index.scss";
 
@@ -81,12 +82,15 @@ const Home = () => {
                     <div>
                       <div className="card-desc">{item.description}</div>
                       <div>
-                        <Button
+                        <CustomButton 
                           className="card-btn"
-                          onClick={() => {
+                          onClickHandler={() => {
                             navigate("/products", { state: item?.id });
                           }}
-                        >{`Explore ${item.name}`}</Button>
+                          label={`Explore ${item.name}`}
+                        > 
+                           {`Explore ${item.name}`}
+                        </CustomButton>
                       </div>
                     </div>
                   </div>

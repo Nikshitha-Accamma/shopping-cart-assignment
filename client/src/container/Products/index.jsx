@@ -1,5 +1,4 @@
 import {
-  Button,
   Card,
   Col,
   Dropdown,
@@ -16,6 +15,7 @@ import AppNotification from "../../components/AppNotification";
 import "./index.scss";
 import { Context } from "../../store";
 import { useLocation } from "react-router-dom";
+import CustomButton from "../../components/CustomButton";
 
 const { Content, Sider } = Layout;
 
@@ -186,16 +186,16 @@ const Products = () => {
                           {`MRP Rs.${item.price}`}
                         </div>
                         <div>
-                          <Button
+                          <CustomButton 
                             className="card-btn"
-                            onClick={() => addToCart(item)}
-                            data-testid="add-to-cart"
-                          >
-                            <span aria-label={`Buy ${item?.name}`}>
-                              Buy Now{" "}
+                            testId="add-to-cart"
+                            onClickHandler={() => addToCart(item)}
+                            > 
+                              <span aria-label={`Buy ${item?.name}`}>
+                              Buy Now
                               <span className="item-price-sm-md">{`@ Rs.${item.price}`}</span>
                             </span>
-                          </Button>
+                          </CustomButton>
                         </div>
                       </div>
                     </div>

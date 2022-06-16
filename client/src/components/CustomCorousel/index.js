@@ -1,6 +1,6 @@
-import { Button } from "antd";
 import React, { useState } from "react";
 import { useSwipeable } from "react-swipeable";
+import CustomButton from "../CustomButton";
 
 import "./index.scss";
 
@@ -44,15 +44,16 @@ const Carousel = ({ children }) => {
         })}
       </div>
       <div className="indicators">
-        <Button
-          onClick={() => {
+        <CustomButton 
+          className="prev-btn" 
+          onClickHandler={() => {
             updateIndex(activeIndex - 1);
           }}
-          className="prev-btn"
-          data-testid="prev-btn"
-        >
-          Prev
-        </Button>
+          testId="prev-btn"
+          label="Previous button"
+        > 
+         Prev
+        </CustomButton>
         {React.Children?.map(children, (child, index) => {
           return (
             <div
@@ -64,15 +65,16 @@ const Carousel = ({ children }) => {
             />
           );
         })}
-        <Button
-          onClick={() => {
+        <CustomButton 
+          className="next-btn" 
+          onClickHandler={() => {
             updateIndex(activeIndex + 1);
           }}
-          className="next-btn"
-          data-testid="next-btn"
-        >
-          Next
-        </Button>
+          testId="next-btn"
+          label="next button"
+        > 
+         Next
+        </CustomButton>
       </div>
     </div>
   );

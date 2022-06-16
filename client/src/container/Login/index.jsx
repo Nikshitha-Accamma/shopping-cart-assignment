@@ -1,6 +1,7 @@
-import { Button, Col, Form, Input, Layout, Row, Typography } from "antd";
+import { Col, Form, Input, Layout, Row, Typography } from "antd";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import CustomButton from "../../components/CustomButton";
 import "./index.scss";
 
 const { Title } = Typography;
@@ -77,13 +78,14 @@ const Login = () => {
               <Input.Password aria-label="Enter Password" data-testid="password" />
             </Form.Item>
             <Form.Item>
-              <Button
+              <CustomButton 
                 htmlType="submit"
                 className="login-btn"
-                data-testid="login-btn"
-              >
-                Login
-              </Button>
+                testId="login-btn"
+                label="Login Button"
+               > 
+                    Login
+              </CustomButton>
             </Form.Item>
           </Form>
         </Col>

@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
-import { Row, Button } from "antd";
+import { Row } from "antd";
 import { CartIcon, Logo } from "../../assets/images";
 import "./index.scss";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Context } from "../../store";
 import CartDetails from "../CartDetails";
+import CustomButton from "../CustomButton";
 
 const Navbar = () => {
   const location = useLocation();
@@ -37,35 +38,38 @@ const Navbar = () => {
       </div>
       <div>
         <Row>
-          <Button
-            type="text"
-            className="auth-items"
-            onClick={() => {
-              navigate("/login");
-            }}
-            data-testid="login"
-          >
-            SignIn
-          </Button>
-          <Button
-            type="text"
-            className="auth-items"
-            onClick={() => {
-              navigate("/register");
-            }}
-            data-testid="register"
-          >
-            Register
-          </Button>
-          <Button
-            type="text"
-            className="cart-icon"
-            onClick={() => setVisible(true)}
-            data-testid="cart-icon"
-          >
-            <img alt="Cart icon" src={CartIcon} height={30} />
-            <span>{`${state?.cartDetails?.length} items`}</span>
-          </Button>
+          <CustomButton 
+          type="text"
+          className="auth-items" 
+          onClickHandler={() => {
+            navigate("/login");
+          }}
+          testId="login"
+          label="SignIn Button"
+        > 
+         SignIn
+        </CustomButton>
+        <CustomButton 
+          type="text"
+          className="auth-items" 
+          onClickHandler={() => {
+            navigate("/register");
+          }}
+          testId="register"
+          label="Register Button"
+        > 
+         Register
+        </CustomButton>
+        <CustomButton 
+          type="text"
+          className="cart-icon" 
+          onClickHandler={() => setVisible(true)}
+          testId="cart-icon"
+          label={`${state?.cartDetails?.length} items in cart Button`}
+        > 
+          <img alt="Cart icon" src={CartIcon} height={30} />
+          <span>{`${state?.cartDetails?.length} items`}</span>
+        </CustomButton>
         </Row>
       </div>
       <CartDetails visible={visible} setVisible={setVisible} />
